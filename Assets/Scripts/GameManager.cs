@@ -6,18 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameObject menuUI, loseUI;
-    public PipeSpawner pipeSpawner;
-    public PlayerController playerController;
+    public GameObject loseUI;
     public int points = 0;
     public TextMeshProUGUI scoreText;
 
     public void StartGame()
     {
-        menuUI.SetActive(false);
-        pipeSpawner.enabled = true;
-        playerController.enabled = true;
-        playerController.rb.simulated = true;
+        Time.timeScale = 1;
     }
 
     private void ShowLoseUI()
@@ -28,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     public void RepeatGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
     }
     public void OnGameOver()
     {
