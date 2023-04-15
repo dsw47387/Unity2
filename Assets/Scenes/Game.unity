@@ -994,7 +994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repeatRate: 2
   height: 3
-  prefabPipe: {fileID: 8367743689942355194, guid: 4ed5e8ab50120ec46adcc5bab4485e52, type: 3}
+  prefabPipeGreen: {fileID: 8367743689942355194, guid: 4ed5e8ab50120ec46adcc5bab4485e52, type: 3}
+  prefabPipeRed: {fileID: 8367743689942355194, guid: bda8f6ef41e0e8a438188beb557aaaf1, type: 3}
 --- !u!4 &1521276765
 Transform:
   m_ObjectHideFlags: 0
@@ -1474,7 +1475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051746958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4643, y: -4.56, z: 0}
+  m_LocalPosition: {x: 3.4643, y: -4.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
