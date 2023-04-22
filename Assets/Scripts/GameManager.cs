@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
     public int points = 0;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public AudioSource scoreSound;
 
     public void StartGame()
     {
@@ -40,6 +41,7 @@ public class GameManager : Singleton<GameManager>
     {
         points++;
         scoreText.text = points.ToString();
+        scoreSound.Play();
     }
 
     private void CheckHighScore()
