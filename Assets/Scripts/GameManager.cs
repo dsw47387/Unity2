@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject loseUI;
     public int points = 0;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
 
     public void StartGame()
     {
@@ -17,6 +18,9 @@ public class GameManager : Singleton<GameManager>
 
     private void ShowLoseUI()
     {
+        int highScore = PlayerPrefs.GetInt("HighScore");
+        scoreText.text = "Score: " + points;
+        highScoreText.text = "High Score: " + highScore;
         loseUI.SetActive(true);
     }
 
@@ -27,6 +31,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void OnGameOver()
     {
+        CheckHighScore();
         ShowLoseUI();
         Time.timeScale = 0;
     }
@@ -35,5 +40,13 @@ public class GameManager : Singleton<GameManager>
     {
         points++;
         scoreText.text = points.ToString();
+    }
+
+    private void CheckHighScore()
+    {
+        if (points > PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", points);
+        }
     }
 }
