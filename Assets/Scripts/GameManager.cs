@@ -51,4 +51,10 @@ public class GameManager : Singleton<GameManager>
             PlayerPrefs.SetInt("HighScore", points);
         }
     }
+    
+    public void LoadMenuScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
+    }
 }
